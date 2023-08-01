@@ -1,0 +1,20 @@
+.search{
+  &-input{
+    margin-top: 120px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 20px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    color: #141414;
+  }
+  &-content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 22px;
+  }
+}

@@ -1,0 +1,29 @@
+@mixin media($size) {
+  @media (max-width: #{$size}px) {
+    @content;
+  }
+}
+@mixin container() {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  @include media(1400) {max-width: 1140px;}
+  @include media(1200) {max-width: 960px;}
+  @include media(992) {max-width: 720px;}
+  @include media(768) {max-width: 540px;}
+  @include media(576) {max-width: 100%;}
+}
+@mixin FontFace($name, $fw, $fName, $fUrl, $ext, $format){
+  @font-face {
+    font-family: $name;
+    src: url('../fonts/#{$fUrl}-#{$fName}.#{$ext}') format($format);
+    font-weight: $fw;
+  }
+}
+$arrayFw: ('Bold', 700),('Medium', 500),('Regular', 400);
+@each $fName, $fw in $arrayFw{
+  @include FontFace('montserrat', $fw, $fName, 'Montserrat/Montserrat', 'ttf', 'truetype');
+  @include FontFace('raleway', $fw, $fName, 'Raleway/Raleway', 'ttf', 'truetype');
+  @include FontFace('inter', $fw, $fName, 'Inter/Inter', 'ttf', 'truetype');  
+}
